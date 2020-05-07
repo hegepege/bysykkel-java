@@ -1,12 +1,12 @@
-package no.hegelest.bysykkel.gbfs;
+package no.hegelest.bysykkel.gbfs.data;
 
+import no.hegelest.bysykkel.gbfs.FeedNotFoundException;
 import no.hegelest.bysykkel.gbfs.data.Feed;
 
 import java.util.List;
 
 public class FeedList {
     public List<Feed> feeds;
-
 
     public String findStationInformationUrl() {
         return feeds

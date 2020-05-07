@@ -1,7 +1,6 @@
 package no.hegelest.bysykkel;
 
 import org.springframework.boot.Banner;
-import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -9,12 +8,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class SpringBootJavaApplication {
+public class BysykkelApplication {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(SpringBootJavaApplication.class)
+        new SpringApplicationBuilder(BysykkelApplication.class)
                 .bannerMode(Banner.Mode.OFF)
-                .web(WebApplicationType.NONE)
                 .run(args);
     }
 
@@ -23,5 +21,10 @@ public class SpringBootJavaApplication {
         return builder
                 .defaultHeader("ClientIdentifier", "hegelest-testapplikasjon")
                 .build();
+    }
+
+    @Bean
+    public BysykkelService autoDiscoveryService(RestTemplate restTemplate){
+        return new BysykkelService(restTemplate);
     }
 }

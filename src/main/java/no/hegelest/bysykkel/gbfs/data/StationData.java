@@ -9,6 +9,11 @@ public class StationData {
     public String lon;
     public int capacity;
 
+    public StationData(final String name, final int id) {
+        this.name = name;
+        this.station_id = id;
+    }
+
     public String name() {
         return name;
     }

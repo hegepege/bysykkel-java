@@ -1,4 +1,4 @@
-package no.hegelest.bysykkel.gbfs;
+package no.hegelest.bysykkel.gbfs.data;
 
 import java.util.List;
 

@@ -11,4 +11,11 @@ public class StationStatus {
     public int station_id;
     public long last_reported;
 
+    public StationStatus(final int id, final int bikesAvailable, final int docksAvailable) {
+        this.station_id = id;
+        this.num_bikes_available = bikesAvailable;
+        this.num_docks_available = docksAvailable;
+    }
+
+
 }
